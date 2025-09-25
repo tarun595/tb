@@ -1,0 +1,12 @@
+module top_module();
+    reg [1:0] in;
+    wire out;
+    andgate dut(.in(in),.out(out));
+    initial begin
+        $monitor("Time=%0d, in[1]=%b, in[0]=%b, out=%b", $time, in[1], in[0], out);
+        in = 2'b00;  #10;
+        in = 2'b01;  #10;
+        in = 2'b10;  #10;
+        in = 2'b11;  #10;
+    end
+endmodule
